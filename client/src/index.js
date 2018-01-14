@@ -9,8 +9,8 @@ import thunk from 'redux-thunk';
 
 import reducer from './rootReducer';
 import Hamburger from './Hamburger';
-import Navigation from './Navigation/';
-import App from './Home/index';
+import Navigation from './Navigation';
+import Home from './Home';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
@@ -22,7 +22,7 @@ ReactDOM.render(
           <Hamburger />
           <Navigation />
           <Switch>
-            <Route path="/" component={App} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </BrowserRouter>

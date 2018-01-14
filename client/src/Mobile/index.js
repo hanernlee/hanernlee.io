@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import { Motion, spring, stiffness, damping } from 'react-motion';
 
-import { styles } from './styles';
+import { Wrapper } from './styles';
 
 class Mobile extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-      <div style={styles.blueContainer}></div>
+      <Motion
+        defaultStyle={{ translateY: 1000 }}
+        style={{ translateY: spring(0, { stiffness: 150, damping: 10 }) }}
+      >
+        {(style) => (
+          <Wrapper
+            style={{
+              transform: `translateY(${style.translateY}px)`
+            }}
+          >
+          </Wrapper>
+        )}
+      </Motion>
     )
   }
 }
 
-export default Radium(Mobile);
+export default Mobile;

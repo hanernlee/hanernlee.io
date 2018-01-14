@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 
-import { styles } from './styles';
+import { Wrapper } from './styles';
 
 import Mobile from '../Mobile';
 import Web from '../Web';
 
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imageReady: false
-    }
-  }
-
+class Home extends Component {
   render() {
     return (
-      <div style={styles.mainContainer}>
+      <Wrapper>
         <Web />
         <Mobile />
-      </div>
+      </Wrapper>
     )
   }
 }
 
-export default Radium(App);
+export default Radium(Home);

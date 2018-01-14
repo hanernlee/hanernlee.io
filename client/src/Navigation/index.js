@@ -20,8 +20,11 @@ class NavigationMenu extends Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   handleClick() {
-    // attach/remove event handler
     if (this.props.navigationState) {
       document.addEventListener('click', this.handleOutsideClick, false);
     } else {
@@ -30,10 +33,7 @@ class NavigationMenu extends Component {
   }
 
   handleOutsideClick(e) {
-    // Detect click outside the ref component
-    // if (!this.node.contains(e.target)) {
-      this.props.toggleNavigation(false);
-    // }
+    this.props.toggleNavigation(false);
   }
 
   renderMenu() {
@@ -85,7 +85,6 @@ function mapStateToProps(state) {
   return {
     navigationLinks: state.navigationLinks,
     navigationState: state.navigationState,
-    currentRoute: state.currentRoute
   };
 };
 

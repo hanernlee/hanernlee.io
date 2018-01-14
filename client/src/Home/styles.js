@@ -1,6 +1,7 @@
-export const styles = {
-  mainContainer: {
-    display: 'flex',
-    justifyContent: 'space-around'
-  }
-}
+import styled from 'styled-components';
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  background-color: #A9D0E5;
+`;
