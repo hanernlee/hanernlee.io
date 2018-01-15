@@ -1,26 +1,16 @@
 import React, { Component } from 'react';
-import { Motion, spring, stiffness, dampling } from 'react-motion';
 
-import { Wrapper } from './styles';
+import { styles } from './styles';
+import animation from './animation';
 
 class Web extends Component {
+  componentDidMount() {
+    animation.show(this.web);
+  }
+
   render() {
     return (
-      <Motion
-        defaultStyle={{ translateY: -1000 }}
-        style={{
-          translateY: spring(0, { stiffness: 150, damping: 10 })
-        }}
-      >
-        {(style) => (
-          <Wrapper
-            style={{
-              transform: `translateY(${style.translateY}px)`
-            }}
-          >
-          </Wrapper>
-        )}
-      </Motion>
+      <div ref={(val) => (this.web = val)} style={styles.base}></div>
     )
   }
 }

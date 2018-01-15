@@ -8,8 +8,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 import reducer from './rootReducer';
-import Hamburger from './Hamburger';
-import Navigation from './Navigation';
 import Home from './Home';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
@@ -19,8 +17,6 @@ ReactDOM.render(
     <StyleRoot>
       <BrowserRouter>
         <div>
-          <Hamburger />
-          <Navigation />
           <Switch>
             <Route path="/" component={Home} />
           </Switch>
