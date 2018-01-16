@@ -1,12 +1,15 @@
 {
-  "name": "portfolio-redux-react",
+  "name": "hanernlee.io",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "animated": "0.2.0",
     "concurrently": "^3.5.0",
     "gsap": "^1.20.3",
     "react-motion": "^0.5.2",
+    "react-motion-ui-pack": "^0.10.3",
+    "react-transition-group": "1.x",
     "styled-components": "^2.4.0"
   },
   "engines": {

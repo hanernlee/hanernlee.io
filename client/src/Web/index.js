@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 
-import { styles } from './styles';
-import animation from './animation';
+import { Wrapper } from './styles';
 
-class Web extends Component {
-  componentDidMount() {
-    animation.show(this.web);
-  }
+import { Link } from 'react-router-dom';
+import AnimatedWrapper from "../AnimatedWrapper";
 
+class WebComponent extends Component {
   render() {
     return (
-      <div ref={(val) => (this.web = val)} style={styles.base}></div>
+      <Wrapper>
+        <Link to="/mobile">Mobile</Link>
+        <Link to="/web">Web</Link>
+        <Link to="/">Home</Link>
+      </Wrapper>
     )
   }
 }
 
+const Web = AnimatedWrapper(WebComponent);
 export default Web;

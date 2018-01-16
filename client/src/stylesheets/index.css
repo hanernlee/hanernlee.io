@@ -9,3 +9,8 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+.animated-page-wrapper {
+  width: 100%;
+  height: 100%;
+}

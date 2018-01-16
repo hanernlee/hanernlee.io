@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
 
 import { Wrapper } from './styles';
+import AnimatedWrapper from '../AnimatedWrapper';
+
+import { Link } from 'react-router-dom';
 
 import Mobile from '../Mobile';
 import Web from '../Web';
 
-class Home extends Component {
+class HomeComponent extends Component {
+  handleClick() {
+    this.setState({
+      show: true
+    });
+  }
+
   render() {
     return (
       <Wrapper>
         <Web />
         <Mobile />
+        <Link to="/mobile">Mobile</Link>
+        <Link to="/web">Web</Link>
+        <Link to="/">Home</Link>
       </Wrapper>
     )
   }
 }
 
-export default Radium(Home);
+const Home = AnimatedWrapper(HomeComponent);
+export default Home;
