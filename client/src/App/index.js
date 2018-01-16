@@ -1,45 +1,40 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+import AnimatedSwitch from "../AnimatedSwitch";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 
-import Home from './Home';
-import Web from './Web';
-import Mobile from './Mobile';
-
-const firstChild = props => {
-  const childrenArray = React.Children.toArray(props.children);
-  return childrenArray[0] || null;
-};
+import Home from '../Home';
+import Web from '../Web';
+import Mobile from '../Mobile';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/subpage">Subpage</Link>
-        </div>
         <Route
-          path="/mobile"
-          children={({ match, ...rest }) => (
-            <TransitionGroup component={firstChild}>
-              {match && <Mobile {...rest} />}
-            </TransitionGroup>
-        )} />
-        <Route
-          path="/web"
-          children={({ match, ...rest }) => (
-            <TransitionGroup component={firstChild}>
-              {match && <Web {...rest} />}
-            </TransitionGroup>
-        )} />
-        <Route
-          exact path="/"
-          children={({ match, ...rest }) => (
-            <TransitionGroup component={firstChild}>
-              {match && <Home {...rest} />}
-            </TransitionGroup>
-        )} />
+					render={({ location }) => (
+						<TransitionGroup component="main">
+							<AnimatedSwitch
+								key={location.key}
+								location={location}
+							>
+								<Route
+									path="/web"
+									render={props => (
+										<Web {...props}  />
+									)}
+								/>
+                <Route
+                  path="/mobile"
+                  render={props => (
+                    <Mobile {...props}  />
+                  )}
+                />
+                <Route exact path="/" component={Home} />
+							</AnimatedSwitch>
+						</TransitionGroup>
+					)}
+				/>
       </div>
     );
   }

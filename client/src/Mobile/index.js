@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import Transition from 'react-motion-ui-pack';
-import { spring } from "react-motion";
+import { Motion, spring } from 'react-motion';
 
 import { Wrapper } from './styles';
 
-import { Link } from 'react-router-dom';
-import AnimatedWrapper from "../AnimatedWrapper";
-
-class MobileComponent extends Component {
+class Mobile extends Component {
   render() {
     return (
-          <Wrapper key="Mobile">
-            <Link to="/web">Web</Link>
-            <Link to="/">Home</Link>
+      <Motion
+        defaultStyle={{translateY: -1000}}
+        style={{ translateY: spring(0, {stiffness: 200, damping: 5}) }}
+      >
+        {(style) => (
+          <Wrapper
+            style={{
+              transform: `translateY(${style.translateY}px)`
+            }}
+          >
           </Wrapper>
-        )
-      }
+        )}
+      </Motion>
+    )
+  }
 }
 
-const Mobile = AnimatedWrapper(MobileComponent);
 export default Mobile;

@@ -33,8 +33,8 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
       opacity: Animated.template`${this.state.animate}`,
       transform: Animated.template`
       translate3d(0,${this.state.animate.interpolate({
-      inputRange: [0, 1],
-      outputRange: ["12px", "0px"]
+        inputRange: [0, 1],
+        outputRange: ["100px", "0px"]
       })},0)
       `
     };
