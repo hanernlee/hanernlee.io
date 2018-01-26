@@ -13,5 +13,8 @@ export const styles = {
   headline: {
     display: 'block',
     fontSize: '18px',
-  }
+  },
+  // menu: {
+  //   position: 'absolute',
+  // }
 }

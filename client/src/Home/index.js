@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import injectSheet from 'react-jss';
 
 import { bubbles, burst, timeline, swirl, swirl1, swirl3, swirl4 } from './burst';
 import { styles } from './styles';
@@ -8,10 +8,10 @@ import Menu from '../Menu';
 
 class Home extends Component {
   componentDidMount() {
-    swirl.generate().replay();
-    swirl1.generate().replay();
-    swirl3.generate().replay();
-    swirl4.generate().replay();
+    // swirl.generate().replay();
+    // swirl1.generate().replay();
+    // swirl3.generate().replay();
+    // swirl4.generate().replay();
     document.addEventListener('click', this.handleBurst);
   }
 
@@ -29,16 +29,20 @@ class Home extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <div>
-        <div id="title" style={styles.title}>
+        <div id="title" className={classes.title}>
           <span>Christopher Lee</span>
-          <span style={styles.headline}>Software Developer</span>
+          <span className={classes.headline}>Software Developer</span>
         </div>
-        <Menu />
+        <div className={classes.menu}>
+          <Menu />
+        </div>
       </div>
     )
   }
 }
 
-export default Radium(Home);
+export default injectSheet(styles)(Home);
