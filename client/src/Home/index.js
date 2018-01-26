@@ -1,30 +1,44 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 
-import { burst } from './burst';
+import { bubbles, burst, timeline, swirl, swirl1, swirl3, swirl4 } from './burst';
+import { styles } from './styles';
+
+import Menu from '../Menu';
 
 class Home extends Component {
   componentDidMount() {
-    document.addEventListener('click' , (e) => {
-       burst
-           .tune({ x: e.pageX, y: e.pageY })
-           .replay();
-    });
+    swirl.generate().replay();
+    swirl1.generate().replay();
+    swirl3.generate().replay();
+    swirl4.generate().replay();
+    document.addEventListener('click', this.handleBurst);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click' , (e) => {
-       burst
-           .tune({ x: e.pageX, y: e.pageY })
-           .replay();
-    });
+    document.removeEventListener('click', this.handleBurst);
+  }
+
+  handleBurst(event) {
+    const x = event.pageX, y = event.pageY;
+    const coords = { x, y };
+
+    burst.tune(coords);
+    timeline.add(burst);
+    timeline.replay();
   }
 
   render() {
     return (
       <div>
+        <div id="title" style={styles.title}>
+          <span>Christopher Lee</span>
+          <span style={styles.headline}>Software Developer</span>
+        </div>
+        <Menu />
       </div>
     )
   }
 }
 
-export default Home;
+export default Radium(Home);

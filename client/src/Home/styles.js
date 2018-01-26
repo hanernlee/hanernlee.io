@@ -1,7 +1,17 @@
-import styled from 'styled-components';
-
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  background-color: #A9D0E5;
-`;
+export const styles = {
+  title: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    color: '#24D8A6',
+    // color: '#FFFFFF',
+    fontSize: '42px',
+    fontWeight: 'bold',
+    transform: 'translate(-50%, -50%)',
+    textAlign: 'center',
+  },
+  headline: {
+    display: 'block',
+    fontSize: '18px',
+  }
+}
