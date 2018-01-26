@@ -22,10 +22,10 @@ export const circle = new mojs.Shape({
 export const swirl = new mojs.ShapeSwirl({
   fill: 'cyan',
   top: '90%',
-  left: '95%',
+  left: '96%',
   y: { 0: -150 },
   radius: 8,
-  swirlFrequency: 30,
+  swirlFrequency: 15,
   duration: 1000,
   repeat: 999
 });
@@ -33,10 +33,10 @@ export const swirl = new mojs.ShapeSwirl({
 export const swirl1 = new mojs.ShapeSwirl({
   fill: '#ff69b4',
   top: '90%',
-  left: '95%',
+  left: '94%',
   y: { 0: -200 },
   radius: 8,
-  swirlFrequency: 30,
+  swirlFrequency: 20,
   duration: 1500,
   repeat: 999
 });
@@ -44,7 +44,7 @@ export const swirl1 = new mojs.ShapeSwirl({
 export const swirl3 = new mojs.ShapeSwirl({
   fill: 'white',
   top: '90%',
-  left: '95%',
+  left: '94%',
   y: { 0: -200 },
   radius: 8,
   swirlFrequency: 10,
@@ -85,7 +85,7 @@ export const bubbles = new mojs.Burst({
 export const burst = new mojs.Burst({
   left: 0,
   top: 0,
-  radius: { 0: 30 },
+  radius: { 0: 50 },
   opacity: { 1: 0 },
   angle: 45,
   count: 10,

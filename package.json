@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "animated": "0.2.0",
+    "classnames": "^2.2.5",
     "concurrently": "^3.5.0",
     "gsap": "^1.20.3",
     "mo-js": "^0.288.2",

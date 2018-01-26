@@ -9,9 +9,11 @@ import Menu from '../Menu';
 class Home extends Component {
   componentDidMount() {
     // swirl.generate().replay();
-    // swirl1.generate().replay();
-    // swirl3.generate().replay();
-    // swirl4.generate().replay();
+  console.log(swirl);
+    swirl.generate().replay();
+    swirl1.generate().replay();
+    swirl3.generate().replay();
+    swirl4.generate().replay();
     document.addEventListener('click', this.handleBurst);
   }
 

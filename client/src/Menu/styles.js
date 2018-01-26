@@ -12,7 +12,6 @@ const circle = {
 export const styles = {
   base: {
     position: 'absolute',
-    backgroundColor: '#24D8A6',
     bottom: '25px',
     right: '25px',
     width: '60px',
@@ -20,14 +19,21 @@ export const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  plus: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    zIndex: '1',
+    backgroundColor: '#24D8A6',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     fontSize: '36px',
     borderRadius: '50%'
   },
-  plus: {
-  },
   firstOpt: {
     extend: circle,
-    transform: 'translateX(-150px)',
   },
   secondOpt: {
     extend: circle,
