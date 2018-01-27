@@ -4,7 +4,6 @@ export const styles = {
     top: '50%',
     left: '50%',
     color: '#24D8A6',
-    // color: '#FFFFFF',
     fontSize: '42px',
     fontWeight: 'bold',
     transform: 'translate(-50%, -50%)',
@@ -14,7 +13,4 @@ export const styles = {
     display: 'block',
     fontSize: '18px',
   },
-  // menu: {
-  //   position: 'absolute',
-  // }
 }

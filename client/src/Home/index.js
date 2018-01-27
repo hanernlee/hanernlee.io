@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 
-import { bubbles, burst, timeline, swirl, swirl1, swirl3, swirl4 } from './burst';
+import { bubbles, burst, timeline, swirl, swirl1, swirl3, swirl4 , swirl5} from './burst';
 import { styles } from './styles';
 
 import Menu from '../Menu';
 
 class Home extends Component {
   componentDidMount() {
-    // swirl.generate().replay();
-  console.log(swirl);
     swirl.generate().replay();
     swirl1.generate().replay();
     swirl3.generate().replay();
     swirl4.generate().replay();
+    // swirl5.generate().replay();
     document.addEventListener('click', this.handleBurst);
   }
 

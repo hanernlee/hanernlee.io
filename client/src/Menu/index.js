@@ -18,10 +18,30 @@ class Menu extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
   handleMenuState = () => {
     this.setState({
       isOpen: !this.state.isOpen
-    })
+    });
+  }
+
+  handleClickOutside = (event) => {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({
+        isOpen: false
+      });
+    }
+}
+
+  setWrapperRef = (node) => {
+    this.wrapperRef = node;
   }
 
   render() {
@@ -29,7 +49,7 @@ class Menu extends Component {
     const { isOpen } = this.state;
 
     return (
-      <div className={classes.base} onClick={this.handleMenuState}>
+      <div className={classes.base} ref={this.setWrapperRef} onClick={this.handleMenuState}>
         <div className={classes.plus}>+</div>
         <Motion
            defaultStyle={{ translateX: 0, scale: 0 }}

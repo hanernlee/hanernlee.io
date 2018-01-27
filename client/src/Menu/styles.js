@@ -37,10 +37,8 @@ export const styles = {
   },
   secondOpt: {
     extend: circle,
-    transform: 'translate(-100px, -100px)',
   },
   thirdOpt: {
     extend: circle,
-    transform: 'translateY(-150px)',
   }
 }

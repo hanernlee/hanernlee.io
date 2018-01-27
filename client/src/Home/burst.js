@@ -1,4 +1,5 @@
 import mojs from 'mo-js';
+import { Color } from '../color.js';
 
 const DURATION = 500;
 
@@ -22,8 +23,9 @@ export const circle = new mojs.Shape({
 export const swirl = new mojs.ShapeSwirl({
   fill: 'cyan',
   top: '90%',
-  left: '96%',
-  y: { 0: -150 },
+  left: '95%',
+  y: { 0: -300 },
+  x: { 0: -500 },
   radius: 8,
   swirlFrequency: 15,
   duration: 1000,
@@ -31,10 +33,11 @@ export const swirl = new mojs.ShapeSwirl({
 });
 
 export const swirl1 = new mojs.ShapeSwirl({
-  fill: '#ff69b4',
+  fill: Color.pink,
   top: '90%',
-  left: '94%',
-  y: { 0: -200 },
+  left: '93%',
+  y: { 0: -250 },
+  x: { 0: -200 },
   radius: 8,
   swirlFrequency: 20,
   duration: 1500,
@@ -42,10 +45,11 @@ export const swirl1 = new mojs.ShapeSwirl({
 });
 
 export const swirl3 = new mojs.ShapeSwirl({
-  fill: 'white',
+  fill: Color.white,
   top: '90%',
   left: '94%',
-  y: { 0: -200 },
+  y: { 0: -250 },
+  x: { 0: -250 },
   radius: 8,
   swirlFrequency: 10,
   duration: 1000,
@@ -53,12 +57,24 @@ export const swirl3 = new mojs.ShapeSwirl({
 });
 
 export const swirl4 = new mojs.ShapeSwirl({
-  fill: '#24D8A6',
+  fill: Color.purple,
+  top: '90%',
+  left: '95%',
+  y: { 0: -200 },
+  x: { 0: -250 },
+  radius: 15,
+  swirlFrequency: 20,
+  duration: 500,
+  repeat: 999
+});
+
+export const swirl5 = new mojs.ShapeSwirl({
+  fill: '#8581f9',
   top: '90%',
   left: '95%',
   y: { 0: -200 },
   radius: 10,
-  swirlFrequency: 15,
+  swirlFrequency: 5,
   duration: 500,
   repeat: 999
 });
