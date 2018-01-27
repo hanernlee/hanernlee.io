@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import { Route } from "react-router-dom";
 
-import { bubbles, burst, timeline, swirl, swirl1, swirl3, swirl4 , swirl5} from './burst';
+import { burst, swirl, swirl1, swirl3, swirl4 , swirl5} from './burst';
 import { styles } from './styles';
-
-import Menu from '../Menu';
 
 class Home extends Component {
   componentDidMount() {
@@ -12,21 +11,22 @@ class Home extends Component {
     swirl1.generate().replay();
     swirl3.generate().replay();
     swirl4.generate().replay();
-    // swirl5.generate().replay();
+    swirl5.generate().replay();
     document.addEventListener('click', this.handleBurst);
   }
 
   componentWillUnmount() {
+    swirl.stop();
+    swirl1.stop();
+    swirl3.stop();
+    swirl4.stop();
+    swirl5.stop();
     document.removeEventListener('click', this.handleBurst);
   }
 
   handleBurst(event) {
     const x = event.pageX, y = event.pageY;
     const coords = { x, y };
-
-    burst.tune(coords);
-    timeline.add(burst);
-    timeline.replay();
   }
 
   render() {
@@ -34,12 +34,9 @@ class Home extends Component {
 
     return (
       <div>
-        <div id="title" className={classes.title}>
-          <span>Christopher Lee</span>
-          <span className={classes.headline}>Software Developer</span>
-        </div>
-        <div className={classes.menu}>
-          <Menu />
+        <div className={classes.title}>
+          <span id="title">Christopher Lee</span>
+          <span id="headline" className={classes.headline}>Software Developer</span>
         </div>
       </div>
     )

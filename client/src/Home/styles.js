@@ -1,9 +1,11 @@
+import { Color } from '../color.js';
+
 export const styles = {
   title: {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    color: '#24D8A6',
+    width: '100%',
     fontSize: '42px',
     fontWeight: 'bold',
     transform: 'translate(-50%, -50%)',

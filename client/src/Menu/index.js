@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import classNames from 'classnames';
 import { Motion, spring } from 'react-motion';
+import { Link } from 'react-router-dom';
 
 import { styles } from './styles';
 
@@ -15,6 +17,7 @@ class Menu extends Component {
 
     this.state = {
       isOpen: false,
+      isActive: false,
     }
   }
 
@@ -35,10 +38,26 @@ class Menu extends Component {
   handleClickOutside = (event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.setState({
-        isOpen: false
+        isOpen: false,
       });
     }
-}
+  }
+
+  renderHamburger() {
+    const { classes } = this.props;
+    const { isOpen } = this.state;
+    const burgTop = isOpen ? classes.burgerTop: '';
+    const burgMid = isOpen ? classes.burgerMiddle: '';
+    const burgBot = isOpen ? classes.burgerBottom: '';
+
+    return (
+      <div className={classes.plus}>
+        <div className={classNames(classes.burger, burgTop)}></div>
+        <div className={classNames(classes.burger, burgMid)}></div>
+        <div className={classNames(classes.burger, burgBot)}></div>
+      </div>
+    );
+  }
 
   setWrapperRef = (node) => {
     this.wrapperRef = node;
@@ -50,13 +69,16 @@ class Menu extends Component {
 
     return (
       <div className={classes.base} ref={this.setWrapperRef} onClick={this.handleMenuState}>
-        <div className={classes.plus}>+</div>
+        {this.renderHamburger()}
         <Motion
            defaultStyle={{ translateX: 0, scale: 0 }}
            style={{ translateX: spring(isOpen ? -150 : 0, config), scale: isOpen ? spring(1) : spring(0) }}
         >
           {
-            (value) => <div className={classes.firstOpt} style={toCSS(value.translateX, 0, value.scale)}>h</div>
+            (value) =>
+            <Link to="/work" className={classes.firstOpt} style={toCSS(value.translateX, 0, value.scale)}>
+              <div>h</div>
+            </Link>
           }
         </Motion>
         <Motion

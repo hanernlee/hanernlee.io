@@ -1,25 +1,6 @@
 import mojs from 'mo-js';
 import { Color } from '../color.js';
 
-const DURATION = 500;
-
-export const circle = new mojs.Shape({
-  left: 0,
-  top: 0,
-  strokeWidth: 10,
-  fill: 'none',
-  radius: 50,
-  scale: { 0 : 1 },
-  opacity: { 1: 0 },
-  shape: 'circle',
-  stroke: 'white',
-  strokeWidth: 5,
-  fill: 'none',
-  duration: 1.5*DURATION,
-  isForce3d: true,
-  isTimelineLess: true,
-});
-
 export const swirl = new mojs.ShapeSwirl({
   fill: 'cyan',
   top: '90%',
@@ -36,7 +17,7 @@ export const swirl1 = new mojs.ShapeSwirl({
   fill: Color.pink,
   top: '90%',
   left: '93%',
-  y: { 0: -250 },
+  y: { 0: -300 },
   x: { 0: -200 },
   radius: 8,
   swirlFrequency: 20,
@@ -60,7 +41,7 @@ export const swirl4 = new mojs.ShapeSwirl({
   fill: Color.purple,
   top: '90%',
   left: '95%',
-  y: { 0: -200 },
+  y: { 0: -250 },
   x: { 0: -250 },
   radius: 15,
   swirlFrequency: 20,
@@ -77,25 +58,6 @@ export const swirl5 = new mojs.ShapeSwirl({
   swirlFrequency: 5,
   duration: 500,
   repeat: 999
-});
-
-export const bubbles = new mojs.Burst({
-  left: 0,
-  top: 0,
-  radius: 28,
-  count: 5,
-  timeline: { delay: 100 },
-  children: {
-    // stroke: '#77D8DA',
-    stroke: '#ff69b4',
-    fill: 'none',
-    scale: 1,
-    strokeWidth: { 8: 0 },
-    radius: { 0 : 'rand(6, 10)' },
-    degreeShift: 'rand(-50, 50)',
-    duration: 400,
-    delay: 'rand(0, 250)',
-  }
 });
 
 export const burst = new mojs.Burst({

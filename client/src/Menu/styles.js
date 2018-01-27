@@ -1,3 +1,5 @@
+import { Color } from '../color.js';
+
 const circle = {
   position: 'absolute',
   backgroundColor: '#FFFFFF',
@@ -11,7 +13,7 @@ const circle = {
 
 export const styles = {
   base: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: '25px',
     right: '25px',
     width: '60px',
@@ -25,12 +27,29 @@ export const styles = {
     height: '100%',
     position: 'absolute',
     zIndex: '1',
-    backgroundColor: '#24D8A6',
+    backgroundColor: Color.green,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
     fontSize: '36px',
     borderRadius: '50%'
+  },
+  burger: {
+    height: '4px',
+    width: '27px',
+    margin: '2px',
+    backgroundColor: Color.blue,
+    transition: '0.3s ease all',
+  },
+  burgerTop: {
+    transform: 'translateY(8px) rotate(-45deg)',
+  },
+  burgerMiddle: {
+    transform: 'rotate(45deg)',
+  },
+  burgerBottom: {
+    opacity: '0',
   },
   firstOpt: {
     extend: circle,
