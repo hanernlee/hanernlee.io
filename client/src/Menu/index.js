@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import { Motion, spring } from 'react-motion';
-import { Link } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import { styles } from './styles';
 
@@ -76,9 +76,9 @@ class Menu extends Component {
         >
           {
             (value) =>
-            <Link to="/work" className={classes.firstOpt} style={toCSS(value.translateX, 0, value.scale)}>
-              <div>h</div>
-            </Link>
+              <NavLink exact to="/" activeClassName={classes.active} className={classes.firstOpt} style={toCSS(value.translateX, 0, value.scale)}>
+                <i className="fa fa-home fa-2x"/>
+              </NavLink>
           }
         </Motion>
         <Motion
@@ -86,7 +86,10 @@ class Menu extends Component {
            style={{ translate: spring(isOpen ? -100 : 0, config), scale: isOpen ? spring(1) : spring(0) }}
         >
           {
-            (value) => <div className={classes.firstOpt} style={toCSS(value.translate, value.translate, value.scale)}>m</div>
+            (value) =>
+              <NavLink exact to="/work" activeClassName={classes.active} className={classes.firstOpt} style={toCSS(value.translate, value.translate, value.scale)}>
+                <i className="fa fa-code fa-2x"/>
+              </NavLink>
           }
         </Motion>
         <Motion
@@ -94,7 +97,10 @@ class Menu extends Component {
            style={{ translateY: spring(isOpen ? -150 : 0, config), scale: isOpen ? spring(1) : spring(0) }}
         >
           {
-            (value) => <div className={classes.thirdOpt} style={toCSS(0, value.translateY, value.scale)}>g</div>
+            (value) =>
+            <NavLink exact to="/contact" activeClassName={classes.active} className={classes.thirdOpt} style={toCSS(0, value.translateY, value.scale)}>
+              <i className="fa fa-comments fa-2x"/>
+            </NavLink>
           }
         </Motion>
       </div>
@@ -102,4 +108,4 @@ class Menu extends Component {
   }
 }
 
-export default injectSheet(styles)(Menu);
+export default injectSheet(styles)(withRouter(Menu));

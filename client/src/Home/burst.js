@@ -2,7 +2,7 @@ import mojs from 'mo-js';
 import { Color } from '../color.js';
 
 export const swirl = new mojs.ShapeSwirl({
-  fill: 'cyan',
+  fill: Color.green,
   top: '90%',
   left: '95%',
   y: { 0: -300 },
@@ -50,10 +50,11 @@ export const swirl4 = new mojs.ShapeSwirl({
 });
 
 export const swirl5 = new mojs.ShapeSwirl({
-  fill: '#8581f9',
+  fill: Color.lightBlue,
   top: '90%',
   left: '95%',
-  y: { 0: -200 },
+  y: { 0: -300 },
+  x: { 0: -500 },
   radius: 10,
   swirlFrequency: 5,
   duration: 500,

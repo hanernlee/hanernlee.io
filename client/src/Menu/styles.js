@@ -9,6 +9,9 @@ const circle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  textDecoration: 'none',
+  color: Color.pink,
+  transition: '0.3s ease color',
 }
 
 export const styles = {
@@ -53,11 +56,23 @@ export const styles = {
   },
   firstOpt: {
     extend: circle,
+    '&:hover': {
+      color: Color.purple
+    }
   },
   secondOpt: {
     extend: circle,
+    '&:hover': {
+      color: Color.purple
+    }
   },
   thirdOpt: {
     extend: circle,
+    '&:hover': {
+      color: Color.purple
+    }
+  },
+  active: {
+    color: Color.green
   }
 }
