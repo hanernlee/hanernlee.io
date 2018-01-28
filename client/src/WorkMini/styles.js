@@ -9,7 +9,7 @@ export const styles = {
       content: '""',
       position: 'absolute',
       opacity: '0.4',
-      backgroundImage: props => `linear-gradient(45deg, ${Color.lightPurple} 0%, ${Color.lightPurple} 40%, ${Color.lightPink} 100%), url(${props.image})`,
+      backgroundImage: props => `linear-gradient(45deg, ${Color.lightPurple} 0%, ${Color.lightPurple} 40%, ${Color.lightPink} 100%), url(${props.work.image})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
@@ -17,18 +17,18 @@ export const styles = {
       height: '100%',
       transition: 'transform 0.35s ease',
       transform: 'scale(1.5)',
+      cursor: 'pointer',
     },
     '&:hover': {
       '&:before': {
         transform: 'scale(1)',
-        backgroundImage: props => `linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(${props.image})`,
+        backgroundImage: props => `linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(${props.work.image})`,
         opacity: '1',
       },
       '& $info': {
         opacity: '1',
         transform: 'translateY(0px)'
       }
-
     },
   },
   info: {

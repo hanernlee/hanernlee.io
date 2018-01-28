@@ -7,6 +7,7 @@ import { styles } from './styles';
 import { fetchWorks } from '../Firebase/actions';
 
 import WorkMini from '../WorkMini';
+import WorkActive from '../WorkActive';
 
 const config = { stiffness: 200, damping: 10 };
 const toCSS = (translationY) => ({
@@ -21,11 +22,25 @@ class Work extends Component {
     this.state = {
       isOpen: false,
       workEntries: [],
+      activeWork: false,
     }
   }
 
   componentDidMount() {
     this.props.fetchWorks();
+  }
+
+  showWork = (work) => {
+    this.setState({
+      activeWork: work
+    });
+  }
+
+  removeWork = () => {
+    console.log('removing');
+    this.setState({
+      activeWork: null,
+    });
   }
 
   onLoad(work) {
@@ -36,42 +51,34 @@ class Work extends Component {
 
   render() {
     const { classes, worksList } = this.props;
-    const loadedWorkEntries = this.state.workEntries;
-    console.log(worksList);
+    const { workEntries, activeWork } = this.state;
 
     if (!worksList) {
       return null;
     } else {
-      if (worksList.length == loadedWorkEntries.length) {
+      if (worksList.length === workEntries.length) {
         return (
-          <StaggeredMotion
-            defaultStyles={[{y: -500}, {y: -500}, {y: -500}, {y: -1000}, {y: -1000}]}
-            styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
-              return i === 0
-                ? {y: spring(0, config)}
-                : {y: spring(prevInterpolatedStyles[i - 1].y, config)}
-            })}>
-            {interpolatingStyles =>
-              <div className={classes.containerWork}>
-                {interpolatingStyles.map((style, i) =>
-                    <div
-                      className={classes.baseWork}
-                      key={i}
-                      style={toCSS(style.y)}
-                    >
-                      <WorkMini
-                        image={worksList[i].image}
-                        demo={worksList[i].demo}
-                        github={worksList[i].github}
-                        title={worksList[i].title}
-                        meta={worksList[i].meta}
-                      />
-                    </div>
-                  )
-                }
-              </div>
-            }
-          </StaggeredMotion>
+          <div>
+            <WorkActive work={activeWork} removeWork={this.removeWork} />
+            <StaggeredMotion
+              defaultStyles={[{y: -500}, {y: -500}, {y: -500}, {y: -1000}, {y: -1000}]}
+              styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
+                return i === 0
+                  ? {y: spring(0, config)}
+                  : {y: spring(prevInterpolatedStyles[i - 1].y, config)}
+              })}>
+              {interpolatingStyles =>
+                <div className={classes.containerWork}>
+                  {interpolatingStyles.map((style, i) =>
+                      <div className={classes.baseWork} key={i} style={toCSS(style.y)}>
+                        <WorkMini work={worksList[i]} showWork={this.showWork} />
+                      </div>
+                    )
+                  }
+                </div>
+              }
+            </StaggeredMotion>
+          </div>
         )
       } else {
         return (

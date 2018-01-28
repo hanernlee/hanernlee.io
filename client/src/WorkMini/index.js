@@ -12,11 +12,16 @@ class WorkMini extends Component {
     }
   }
 
+  handleClick = (work) => {
+    this.props.showWork(work);
+  }
+
   render() {
-    const { classes, title, demo, github, meta } = this.props;
+    const { classes, work } = this.props;
+    const { title, meta } = this.props.work;
 
     return (
-      <div className={classes.baseWorkMini}>
+      <div className={classes.baseWorkMini} onClick={this.handleClick.bind(this, work)}>
         <div className={classes.info}>
           <div className={classes.titleContainer}>
             <div className={classes.miniTitle}>{title}</div>
