@@ -11,6 +11,7 @@ import WorkMini from '../WorkMini';
 const config = { stiffness: 200, damping: 10 };
 const toCSS = (translationY) => ({
   transform: `translateY(${translationY}px)`,
+  boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
 });
 
 class Work extends Component {
@@ -28,7 +29,6 @@ class Work extends Component {
   }
 
   onLoad(work) {
-    console.log(work);
     this.setState(({ workEntries }) => {
       return { workEntries: workEntries.concat(work) }
     });
@@ -57,9 +57,15 @@ class Work extends Component {
                     <div
                       className={classes.baseWork}
                       key={i}
-                      style={toCSS(style.y, worksList[i].image)}
+                      style={toCSS(style.y)}
                     >
-                      <WorkMini image={worksList[i].image}/>
+                      <WorkMini
+                        image={worksList[i].image}
+                        demo={worksList[i].demo}
+                        github={worksList[i].github}
+                        title={worksList[i].title}
+                        meta={worksList[i].meta}
+                      />
                     </div>
                   )
                 }

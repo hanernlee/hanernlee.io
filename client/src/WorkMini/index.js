@@ -13,11 +13,20 @@ class WorkMini extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    console.log(this.props);
+    const { classes, title, demo, github, meta } = this.props;
 
     return (
-      <div className={classes.baseWorkMini}></div>
+      <div className={classes.baseWorkMini}>
+        <div className={classes.info}>
+          <div className={classes.titleContainer}>
+            <div className={classes.miniTitle}>{title}</div>
+            <div className={classes.miniMeta}>{meta}</div>
+          </div>
+          <div className={classes.iconContainer}>
+            <i className="fa fa-desktop fa-2x"/>
+          </div>
+        </div>
+      </div>
     )
   }
 }
