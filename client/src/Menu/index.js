@@ -51,7 +51,7 @@ class Menu extends Component {
     const burgBot = isOpen ? classes.burgerBottom: '';
 
     return (
-      <div className={classes.plus}>
+      <div className={classNames(classes.plus, 'menu')}>
         <div className={classNames(classes.burger, burgTop)}></div>
         <div className={classNames(classes.burger, burgMid)}></div>
         <div className={classNames(classes.burger, burgBot)}></div>

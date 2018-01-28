@@ -38,7 +38,8 @@ export const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     fontSize: '36px',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
   },
   burger: {
     height: '4px',

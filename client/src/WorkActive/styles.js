@@ -17,7 +17,38 @@ export const styles = {
   modal: {
     width: 'calc(100% - 60px)',
     height: 'calc(100% - 100px)',
-    backgroundColor: Color.green,
+    padding: '60px',
+    backgroundColor: Color.blue,
     zIndex: '2',
+  },
+  title: {
+    color: Color.white,
+    fontSize: '32px',
+    fontWeight: 'bold'
+  },
+  workContainer: {
+    display: 'flex',
+    height: '100%',
+  },
+  descContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginRight: '20px',
+  },
+  description: {
+    marginTop: '50px',
+  },
+  image: {
+    backgroundImage: props => props.work ? `url(${props.work.image})`: '',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+    marginLeft: '20px',
+  },
+  workLink: {
+    marginTop: 'auto',
   }
 }

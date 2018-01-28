@@ -37,7 +37,6 @@ class Work extends Component {
   }
 
   removeWork = () => {
-    console.log('removing');
     this.setState({
       activeWork: null,
     });
@@ -58,7 +57,7 @@ class Work extends Component {
     } else {
       if (worksList.length === workEntries.length) {
         return (
-          <div>
+          <div >
             <WorkActive work={activeWork} removeWork={this.removeWork} />
             <StaggeredMotion
               defaultStyles={[{y: -500}, {y: -500}, {y: -500}, {y: -1000}, {y: -1000}]}
