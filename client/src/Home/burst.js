@@ -61,6 +61,18 @@ export const swirl5 = new mojs.ShapeSwirl({
   repeat: 999
 });
 
+export const swirl6 = new mojs.ShapeSwirl({
+  fill: Color.pink,
+  top: '90%',
+  left: '95%',
+  y: { 0: -350 },
+  x: { 0: -450 },
+  radius: 10,
+  swirlFrequency: 10,
+  duration: 1000,
+  repeat: 999
+});
+
 export const burst = new mojs.Burst({
   left: 0,
   top: 0,

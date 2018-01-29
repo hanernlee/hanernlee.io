@@ -3,7 +3,7 @@ import injectSheet from 'react-jss';
 import { Route } from "react-router-dom";
 import { Motion, spring } from 'react-motion';
 
-import { burst, swirl, swirl1, swirl3, swirl4 , swirl5} from './burst';
+import { burst, swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './burst';
 import { styles } from './styles';
 
 const config = { stiffness: 200, damping: 6 };
@@ -18,6 +18,7 @@ class Home extends Component {
     swirl3.generate().replay();
     swirl4.generate().replay();
     swirl5.generate().replay();
+    swirl6.generate().replay();
     document.addEventListener('click', this.handleBurst);
   }
 
@@ -27,6 +28,7 @@ class Home extends Component {
     swirl3.stop();
     swirl4.stop();
     swirl5.stop();
+    swirl6.stop();
     document.removeEventListener('click', this.handleBurst);
   }
 
