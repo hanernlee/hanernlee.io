@@ -38,7 +38,6 @@ class WorkMini extends Component {
 
   render() {
     const { classes, work } = this.props;
-    console.log(work);
     const workLink = work ? [work.demo, work.github] : [];
 
     return (
@@ -56,6 +55,7 @@ class WorkMini extends Component {
                       <div className={classes.descContainer}>
                         <div className={classes.title}>{work.title}</div>
                         <div className={classes.description}>{work.description}</div>
+                        <div className={classes.miniImage}></div>
                         <StaggeredMotion
                           defaultStyles={[{y: -500}, {y: -500}]}
                           styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
@@ -65,9 +65,11 @@ class WorkMini extends Component {
                           })}>
                           {interpolatingStyles =>
                             <div className={classes.workLink}>
-                              {interpolatingStyles.map((style, i) =>
-                                  <div key={i} style={toLinkCSS(style.y)}>{workLink[i]}</div>
-                                )
+                              {interpolatingStyles.map((style, i) => {
+                                return i === 0
+                                  ? <a target="_blank" href={workLink[i]} key={i} style={toLinkCSS(style.y)} className={classes.workLinkTag}><i className="fa fa-link fa-2x"/></a>
+                                  : <a target="_blank" href={workLink[i]} key={i} style={toLinkCSS(style.y)} className={classes.workLinkTag}><i className="fa fa-github-alt fa-2x"/></a>
+                                })
                               }
                             </div>
                           }

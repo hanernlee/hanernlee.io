@@ -9,6 +9,8 @@ import { fetchWorks } from '../Firebase/actions';
 import WorkMini from '../WorkMini';
 import WorkActive from '../WorkActive';
 
+import sortBy from 'lodash/sortBy';
+
 const config = { stiffness: 200, damping: 10 };
 const toCSS = (translationY) => ({
   transform: `translateY(${translationY}px)`,
@@ -31,15 +33,17 @@ class Work extends Component {
   }
 
   showWork = (work) => {
-    this.setState({
-      activeWork: work
-    });
+    // this.setState({
+    //   activeWork: work
+    // });
+    this.props.history.push(`/work/${work.id}`);
   }
 
   removeWork = () => {
-    this.setState({
-      activeWork: null,
-    });
+    // this.setState({
+    //   activeWork: null,
+    // });
+    this.props.history.push('/work');
   }
 
   onLoad(work) {
@@ -50,7 +54,9 @@ class Work extends Component {
 
   render() {
     const { classes, worksList } = this.props;
-    const { workEntries, activeWork } = this.state;
+    const id = this.props.match.params.id;
+    const { workEntries } = this.state;
+    const activeWork = id && worksList ? worksList[id - 1] : this.state.activeWork;
 
     if (!worksList) {
       return null;

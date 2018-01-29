@@ -34,9 +34,12 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     marginRight: '20px',
+    '@media (max-width: 733px)': {
+      marginRight: '0',
+    },
   },
   description: {
-    marginTop: '50px',
+    marginTop: '20px',
   },
   image: {
     backgroundImage: props => props.work ? `url(${props.work.image})`: '',
@@ -47,8 +50,42 @@ export const styles = {
     height: '100%',
     alignSelf: 'center',
     marginLeft: '20px',
+    '@media (max-width: 733px)': {
+      display: 'none',
+    },
+  },
+  miniImage: {
+    backgroundImage: props => props.work ? `url(${props.work.image})`: '',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+    margin: '20px 0',
+    '@media (min-width: 733px)': {
+      display: 'none'
+    },
   },
   workLink: {
     marginTop: 'auto',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  workLinkTag: {
+    backgroundColor: Color.white,
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '50px',
+    width: '50px',
+    textDecoration: 'none',
+    color: Color.pink,
+    marginRight: '20px',
+    transition: '0.3s ease color',
+    '&:hover': {
+      color: Color.purple
+    }
   }
 }
