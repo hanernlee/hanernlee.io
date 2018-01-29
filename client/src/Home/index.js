@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Route } from "react-router-dom";
+import { Motion, spring } from 'react-motion';
 
 import { burst, swirl, swirl1, swirl3, swirl4 , swirl5} from './burst';
 import { styles } from './styles';
+
+const config = { stiffness: 200, damping: 6 };
+const toCSS = (translationY) => ({
+  transform: `translate(-50%, ${translationY}%)`,
+});
 
 class Home extends Component {
   componentDidMount() {
@@ -34,10 +40,18 @@ class Home extends Component {
 
     return (
       <div>
-        <div className={classes.title}>
-          <span id="title">Christopher Lee</span>
-          <span id="headline" className={classes.headline}>Software Developer</span>
-        </div>
+        <Motion
+           defaultStyle={{ translateY: -300 }}
+           style={{ translateY: spring(-50, config) }}
+        >
+          {
+            (value) =>
+              <div className={classes.title} style={toCSS(value.translateY)}>
+                <span id="title">Christopher Lee</span>
+                <span id="headline" className={classes.headline}>Software Developer</span>
+              </div>
+          }
+        </Motion>
       </div>
     )
   }

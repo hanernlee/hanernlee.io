@@ -6,7 +6,6 @@ export const styles = {
     width: '100%',
     fontSize: '42px',
     fontWeight: 'bold',
-    transform: 'translate(-50%, -50%)',
     textAlign: 'center',
   },
   headline: {
