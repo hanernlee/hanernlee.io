@@ -18,7 +18,7 @@ export const styles = {
     width: 'calc(100% - 60px)',
     height: 'calc(100% - 100px)',
     padding: '60px',
-    backgroundColor: Color.blue,
+    backgroundColor: Color.darkBlue,
     zIndex: '2',
   },
   title: {
@@ -50,6 +50,7 @@ export const styles = {
     height: '100%',
     alignSelf: 'center',
     marginLeft: '20px',
+    boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
     '@media (max-width: 733px)': {
       display: 'none',
     },
@@ -63,6 +64,7 @@ export const styles = {
     height: '100%',
     alignSelf: 'center',
     margin: '20px 0',
+    boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
     '@media (min-width: 733px)': {
       display: 'none'
     },
@@ -71,6 +73,10 @@ export const styles = {
     marginTop: 'auto',
     display: 'flex',
     alignItems: 'center',
+    '& .icon': {
+      marginLeft: 'auto',
+      color: Color.purple,
+    }
   },
   workLinkTag: {
     backgroundColor: Color.white,

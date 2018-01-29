@@ -18,7 +18,7 @@ class WorkMini extends Component {
 
   render() {
     const { classes, work } = this.props;
-    const { title, meta } = this.props.work;
+    const { title, meta, icon } = this.props.work;
 
     return (
       <div className={classes.baseWorkMini} onClick={this.handleClick.bind(this, work)}>
@@ -28,7 +28,7 @@ class WorkMini extends Component {
             <div className={classes.miniMeta}>{meta}</div>
           </div>
           <div className={classes.iconContainer}>
-            <i className="fa fa-desktop fa-2x"/>
+            <i className={`fa fa-${icon} fa-2x`}/>
           </div>
         </div>
       </div>

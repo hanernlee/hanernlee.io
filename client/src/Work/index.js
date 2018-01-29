@@ -9,8 +9,6 @@ import { fetchWorks } from '../Firebase/actions';
 import WorkMini from '../WorkMini';
 import WorkActive from '../WorkActive';
 
-import sortBy from 'lodash/sortBy';
-
 const config = { stiffness: 200, damping: 10 };
 const toCSS = (translationY) => ({
   transform: `translateY(${translationY}px)`,
@@ -33,16 +31,10 @@ class Work extends Component {
   }
 
   showWork = (work) => {
-    // this.setState({
-    //   activeWork: work
-    // });
     this.props.history.push(`/work/${work.id}`);
   }
 
   removeWork = () => {
-    // this.setState({
-    //   activeWork: null,
-    // });
     this.props.history.push('/work');
   }
 

@@ -71,6 +71,7 @@ class WorkMini extends Component {
                                   : <a target="_blank" href={workLink[i]} key={i} style={toLinkCSS(style.y)} className={classes.workLinkTag}><i className="fa fa-github-alt fa-2x"/></a>
                                 })
                               }
+                              <i className={`icon fa fa-${work.icon} fa-2x`} />
                             </div>
                           }
                         </StaggeredMotion>

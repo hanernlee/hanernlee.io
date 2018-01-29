@@ -11,4 +11,5 @@ export const Color = {
   lightPurple: 'rgba(133, 129, 249, 0.7)',
   lightPink: 'rgba(255, 105, 180, 0.7)',
   lightestPink: 'rgba(255, 105, 180, 0.5)',
+  darkBlue: '#13111D',
 }
