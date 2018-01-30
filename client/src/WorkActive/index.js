@@ -14,10 +14,6 @@ const toLinkCSS = (translationY) => ({
 });
 
 class WorkMini extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWorkActiveClickOutside);
   }

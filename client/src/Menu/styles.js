@@ -2,7 +2,7 @@ import { Color } from '../color.js';
 
 const circle = {
   position: 'absolute',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: Color.white,
   width: '50px',
   height: '50px',
   borderRadius: '50%',

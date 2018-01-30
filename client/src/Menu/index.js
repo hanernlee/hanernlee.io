@@ -17,7 +17,6 @@ class Menu extends Component {
 
     this.state = {
       isOpen: false,
-      isActive: false,
     }
   }
 

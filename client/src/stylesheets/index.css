@@ -7,7 +7,7 @@ html, body {
   font-family: 'Open Sans', sans-serif;
 }
 
-* {
+* {4
   box-sizing: border-box;
 }
 
@@ -24,6 +24,13 @@ html, body {
 #headline {
   color: #24D8A6;
   animation: animation 5s ease infinite;
+}
+
+.rainbow {
+  background:  -webkit-repeating-linear-gradient(-45deg, #8581F9 20%, #FF69B4 50%, #24D8A6 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-flex;
 }
 
 @keyframes reflect {

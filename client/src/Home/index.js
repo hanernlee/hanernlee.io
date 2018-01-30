@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
-import { Route } from "react-router-dom";
 import { Motion, spring } from 'react-motion';
 
-import { burst, swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './burst';
+import { burst, swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './animation';
 import { styles } from './styles';
 
 const config = { stiffness: 200, damping: 6 };
