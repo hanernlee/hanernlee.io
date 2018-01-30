@@ -12,6 +12,7 @@ const circle = {
   textDecoration: 'none',
   color: Color.pink,
   transition: '0.3s ease color',
+  boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
 }
 
 export const styles = {

@@ -2,32 +2,28 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { StaggeredMotion, Motion, spring } from 'react-motion';
 
-// import { swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './animation';
+import { swirl, swirl1, swirl3, swirl4 } from './animation';
 import { styles } from './styles';
 
 const config = { stiffness: 200, damping: 10 };
-const toCSS = (translationX) => ({
-  transform: `translateX(${translationX}px)`
+const toCSS = (translationY) => ({
+  transform: `translateY(${translationY}px)`
 });
 
 class Contact extends Component {
-  // componentDidMount() {
-  //   swirl.generate().replay();
-  //   swirl1.generate().replay();
-  //   swirl3.generate().replay();
-  //   swirl4.generate().replay();
-  //   swirl5.generate().replay();
-  //   swirl6.generate().replay();
-  // }
-  //
-  // componentWillUnmount() {
-  //   swirl.stop();
-  //   swirl1.stop();
-  //   swirl3.stop();
-  //   swirl4.stop();
-  //   swirl5.stop();
-  //   swirl6.stop();
-  // }
+  componentDidMount() {
+    swirl.generate().replay();
+    swirl1.generate().replay();
+    swirl3.generate().replay();
+    swirl4.generate().replay();
+  }
+
+  componentWillUnmount() {
+    swirl.stop();
+    swirl1.stop();
+    swirl3.stop();
+    swirl4.stop();
+  }
 
   render() {
     const { classes } = this.props;
@@ -53,12 +49,12 @@ class Contact extends Component {
     return (
       <div className={classes.baseContact}>
         <Motion
-           defaultStyle={{ translateX: -1000 }}
-           style={{ translateX: spring(0, config) }}
+           defaultStyle={{ translateY: -1000 }}
+           style={{ translateY: spring(0, config) }}
         >
           {
             (value) =>
-              <div className={classes.about} style={toCSS(value.translateX)}>
+              <div className={classes.about} style={toCSS(value.translateY)}>
                 <div>
                   <div className={classes.greeting}>
                     <div className={classes.profileImage}></div>
@@ -75,16 +71,16 @@ class Contact extends Component {
           }
         </Motion>
         <StaggeredMotion
-          defaultStyles={[{x: -500}, {x: -500}, {x: -500}, {x: -500}]}
+          defaultStyles={[{y: -500}, {y: -500}, {y: -500}, {y: -500}]}
           styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
             return i === 0
-              ? {x: spring(0, config)}
-              : {x: spring(prevInterpolatedStyles[i - 1].x, config)}
+              ? {y: spring(0, config)}
+              : {y: spring(prevInterpolatedStyles[i - 1].y, config)}
           })}>
           {interpolatingStyles =>
             <div className={classes.socialContainer}>
               {interpolatingStyles.map((style, i) =>
-                  <a target="_blank" href={social[i].socialLink} key={i} style={toCSS(style.x)} className={classes.social}>
+                  <a target="_blank" href={social[i].socialLink} key={i} style={toCSS(style.y)} className={classes.social}>
                     <i className={`fa fa-${social[i].icon} fa-2x`} />
                   </a>
                 )

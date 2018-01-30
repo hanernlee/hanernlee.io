@@ -10,6 +10,7 @@ export const styles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    width: '100%',
   },
   profileImage: {
     backgroundImage: 'url(/round.jpg)',
@@ -28,18 +29,23 @@ export const styles = {
     alignItems: 'center',
   },
   profileDesc: {
-    marginTop: '20px',
+    paddingTop: '20px',
   },
   about: {
     color: Color.white,
-    margin: '50px 0',
+    padding: '50px 0',
     lineHeight: '30px',
-    padding: '0 30px',
+    padding: '0 20px',
+    width: '700px',
+    '@media (max-width: 760px)': {
+      width: '100%'
+    }
   },
   socialContainer: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: '20px',
   },
   social: {
     backgroundColor: Color.white,
@@ -53,7 +59,7 @@ export const styles = {
     color: Color.green,
     transition: '0.3s ease color',
     boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
-    margin: '0 20px',
+    margin: '0 10px',
     '&:hover': {
       color: Color.purple
     }
