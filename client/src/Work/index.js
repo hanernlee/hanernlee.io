@@ -6,6 +6,7 @@ import { StaggeredMotion, spring } from 'react-motion';
 import { styles } from './styles';
 import { fetchWorks } from '../Firebase/actions';
 
+import Burst from '../Burst';
 import WorkMini from '../WorkMini';
 import WorkActive from '../WorkActive';
 
@@ -51,7 +52,9 @@ class Work extends Component {
     const activeWork = id && worksList ? worksList[id - 1] : this.state.activeWork;
 
     if (!worksList) {
-      return null;
+      return (
+        <Burst  />
+      )
     } else {
       if (worksList.length === workEntries.length) {
         return (
@@ -80,6 +83,7 @@ class Work extends Component {
       } else {
         return (
           <div className={classes.hidden}>
+            <Burst  />
             {worksList.map((work, index) =>
               <img src={work.image} alt={work.name} key={index} onLoad={this.onLoad.bind(this, work)} />
             )}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { Motion, spring } from 'react-motion';
 
-import { burst, swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './animation';
+import { swirl, swirl1, swirl3, swirl4 , swirl5, swirl6 } from './animation';
 import { styles } from './styles';
 
 const config = { stiffness: 200, damping: 6 };
@@ -18,7 +18,6 @@ class Home extends Component {
     swirl4.generate().replay();
     swirl5.generate().replay();
     swirl6.generate().replay();
-    document.addEventListener('click', this.handleBurst);
   }
 
   componentWillUnmount() {
@@ -28,12 +27,6 @@ class Home extends Component {
     swirl4.stop();
     swirl5.stop();
     swirl6.stop();
-    document.removeEventListener('click', this.handleBurst);
-  }
-
-  handleBurst(event) {
-    const x = event.pageX, y = event.pageY;
-    const coords = { x, y };
   }
 
   render() {
