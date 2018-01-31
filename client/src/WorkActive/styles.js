@@ -20,6 +20,7 @@ export const styles = {
     padding: '60px',
     backgroundColor: Color.darkBlue,
     zIndex: '2',
+    position: 'relative',
   },
   title: {
     color: Color.white,
@@ -63,7 +64,8 @@ export const styles = {
     width: '100%',
     height: '100%',
     alignSelf: 'center',
-    margin: '20px 0',
+    marginTop: '20px',
+    marginBottom: '35px',
     boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
     '@media (min-width: 733px)': {
       display: 'none'
@@ -93,5 +95,11 @@ export const styles = {
     '&:hover': {
       color: Color.purple
     }
+  },
+  exit: {
+    position: 'absolute',
+    top: '15px',
+    right: '20px',
+    cursor: 'pointer',
   }
 }

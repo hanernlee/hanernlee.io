@@ -26,6 +26,10 @@ class WorkMini extends Component {
     this.wrapperRef = node;
   }
 
+  handleExit = () => {
+    this.props.removeWork();
+  }
+
   handleWorkActiveClickOutside = (event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.props.removeWork();
@@ -47,6 +51,9 @@ class WorkMini extends Component {
               {work &&
                 (
                   <div className={classes.modal} ref={this.setWrapperRef}>
+                    <div className={classes.exit} onClick={this.handleExit}>
+                      <i className='icon fa fa-times fa-2x' />
+                    </div>
                     <div className={classes.workContainer}>
                       <div className={classes.descContainer}>
                         <div className={classes.title}>{work.title}</div>

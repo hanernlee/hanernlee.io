@@ -61,10 +61,10 @@ class Contact extends Component {
                     <div>Hi, I'm <span className={classes.green}>Chris</span>.</div>
                   </div>
                   <div className={classes.profileDesc}>
-                    I am a <span className="rainbow">Melbourne-based Software Developer</span> with a huge passion for crafting responsive <span className={classes.purple}>mobile</span> & <span className={classes.purple}>web applications</span>.
+                    I am a <span className={classes.purple}>Melbourne-based</span> <span className={classes.pink}>Software Developer</span> with a huge passion for crafting responsive <span className={classes.purple}>mobile</span> & <span className={classes.purple}>web applications</span>.
                   </div>
                   <div className={classes.profileDesc}>
-                    Driven by passion and curiosity, I spend most of my free time developing <span className="rainbow"> iOS (Swift) Applications</span>. <span className={classes.purple}>New experiences</span> & <span className={classes.purple}>challenges</span> are things I constantly look forward to. Feel free to get in touch.
+                    Driven by passion and curiosity, I spend most of my free time developing <span className={classes.green}> iOS (Swift) Applications</span>. <span className={classes.purple}>New experiences</span> & <span className={classes.purple}>challenges</span> are things I constantly look forward to. Feel free to get in touch.
                   </div>
                 </div>
               </div>
