@@ -7,9 +7,6 @@ export const styles = {
     fontSize: '42px',
     fontWeight: 'bold',
     textAlign: 'center',
-    '@media (max-width: 450px)': {
-      fontSize: '36px',
-    },
   },
   headline: {
     display: 'block',
