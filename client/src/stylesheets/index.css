@@ -12,7 +12,7 @@ html, body {
 }
 
 #title {
-  background: linear-gradient(-45deg, #8581F9 20%, #FF69B4 50%, #24D8A6 80%);
+  background: -webkit-linear-gradient(-45deg, #8581F9 20%, #FF69B4 50%, #24D8A6 80%);
   background-size: 200% auto;
   background-clip: text;
   text-fill-color: transparent;
