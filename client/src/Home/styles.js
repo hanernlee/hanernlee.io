@@ -9,7 +9,6 @@ export const styles = {
     fontSize: '42px',
     fontWeight: 'bold',
     textAlign: 'center',
-    border: `1px solid ${Color.blue}`,
     '@media (max-width: 450px)': {
       fontSize: '36px',
     },

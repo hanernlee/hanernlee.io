@@ -19,6 +19,7 @@ html, body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: reflect 2s ease infinite;
+  border: 1px solid #1D1A2D;
 }
 
 #headline {
