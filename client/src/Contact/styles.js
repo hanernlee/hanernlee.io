@@ -16,6 +16,7 @@ export const styles = {
     backgroundImage: 'url(/round.jpg)',
     backgroundSize: 'contain',
     backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
     height: '50px',
     width: '50px',
     borderRadius: '50%',
