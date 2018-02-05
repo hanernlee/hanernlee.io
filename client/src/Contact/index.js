@@ -58,7 +58,7 @@ class Contact extends Component {
                 <div>
                   <div className={classes.greeting}>
                     <div className={classes.profileImage}></div>
-                    <div>Hi, I'm <span className={classes.green}>Chris</span>.</div>
+                    <div>{"Hi, I'm "}<span className={classes.green}>Chris</span>.</div>
                   </div>
                   <div className={classes.profileDesc}>
                     I am a <span className={classes.purple}>Melbourne-based</span> <span className={classes.pink}>Software Developer</span> with a huge passion for crafting responsive <span className={classes.purple}>mobile</span> & <span className={classes.purple}>web applications</span>.
