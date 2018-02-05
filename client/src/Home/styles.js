@@ -1,5 +1,3 @@
-import { Color } from '../color.js';
-
 export const styles = {
   title: {
     position: 'absolute',

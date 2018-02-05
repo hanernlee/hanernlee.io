@@ -34,7 +34,6 @@ export const styles = {
   },
   about: {
     color: Color.white,
-    padding: '50px 0',
     lineHeight: '30px',
     padding: '0 20px',
     width: '700px',
