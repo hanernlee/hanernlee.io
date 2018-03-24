@@ -51,8 +51,7 @@ export const styles = {
     height: '100%',
     alignSelf: 'center',
     marginLeft: '20px',
-    boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
-    '@media (max-width: 733px)': {
+    '@media (max-width: 1024px)': {
       display: 'none',
     },
   },
@@ -66,8 +65,7 @@ export const styles = {
     alignSelf: 'center',
     marginTop: '20px',
     marginBottom: '35px',
-    boxShadow: 'rgba(0, 0, 0, 0.3) 10px 10px 20px',
-    '@media (min-width: 733px)': {
+    '@media (min-width: 1024px)': {
       display: 'none'
     },
   },
