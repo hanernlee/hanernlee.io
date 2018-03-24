@@ -45,7 +45,7 @@ export const styles = {
   image: {
     backgroundImage: props => props.work ? `url(${props.work.image})`: '',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     backgroundPosition: 'center center',
     width: '100%',
     height: '100%',
@@ -59,7 +59,7 @@ export const styles = {
   miniImage: {
     backgroundImage: props => props.work ? `url(${props.work.image})`: '',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     backgroundPosition: 'center center',
     width: '100%',
     height: '100%',
