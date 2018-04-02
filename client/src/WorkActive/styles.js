@@ -43,7 +43,7 @@ export const styles = {
     marginTop: '20px',
   },
   image: {
-    backgroundImage: props => props.work ? `url(${props.work.image})`: '',
+    backgroundImage: props => props.work.gif ?  `url(${props.work.gif})` : `url(${props.work.image})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center center',
@@ -56,7 +56,7 @@ export const styles = {
     },
   },
   miniImage: {
-    backgroundImage: props => props.work ? `url(${props.work.image})`: '',
+    backgroundImage: props => props.work.gif ?  `url(${props.work.gif})` : `url(${props.work.image})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center center',
