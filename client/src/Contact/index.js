@@ -64,7 +64,7 @@ class Contact extends Component {
                     I am a <span className={classes.purple}>Melbourne-based</span> <span className={classes.pink}>Software Developer</span> with a huge passion for crafting responsive <span className={classes.purple}>mobile</span> & <span className={classes.purple}>web applications</span>.
                   </div>
                   <div className={classes.profileDesc}>
-                    Driven by passion and curiosity, I spend most of my free time developing <span className={classes.green}> iOS (Swift) Applications</span>. <span className={classes.purple}>New experiences</span> & <span className={classes.purple}>challenges</span> are things I constantly look forward to. Feel free to get in touch.
+                    Driven by passion and curiosity, I spend most of my free time exploring <span className={classes.green}>different technologies, software engineering practices and design patterns</span>. <span className={classes.purple}>New experiences</span> & <span className={classes.purple}>challenges</span> are things I constantly look forward to. Feel free to get in touch.
                   </div>
                 </div>
               </div>
