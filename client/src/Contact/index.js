@@ -80,7 +80,7 @@ class Contact extends Component {
           {interpolatingStyles =>
             <div className={classes.socialContainer}>
               {interpolatingStyles.map((style, i) =>
-                  <a target="_blank" href={social[i].socialLink} key={i} style={toCSS(style.y)} className={classes.social}>
+                  <a target="_blank" href={social[i].socialLink} rel="noopener noreferrer" key={i} style={toCSS(style.y)} className={classes.social}>
                     <i className={`fa fa-${social[i].icon} fa-2x`} />
                   </a>
                 )
